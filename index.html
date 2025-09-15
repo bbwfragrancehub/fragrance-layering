@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fragrance Layering Guide | Create Your Signature Scent</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap">
+  <style>
+    :root {
+      --primary: #2c1a4a;
+      --secondary: #6a1b9a;
+      --accent: #d69a2d;
+      --light: #f8f5fc;
+      --dark: #1a1a2e;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f8f5fc;
+      color: var(--dark);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 30px 5%;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--accent);
+    }
+
+    .intro, .content {
+      padding: 25px 5%;
+    }
+
+    .intro p {
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    
+    .author-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+    
+    .author-name {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .publish-date {
+      font-size: .9rem;
+      color: #777;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin: 30px 0 15px;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--secondary);
+      margin: 20px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .image-placeholder {
+      background: #f0eef6;
+      border-radius: 6px;
+      padding: 25px;
+      margin: 20px 0;
+      text-align: center;
+      color: var(--primary);
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    .tip-box {
+      background: #f8f5fc;
+      border-left: 3px solid var(--accent);
+      padding: 15px;
+      margin: 20px 0;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .fragrance-types {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .fragrance-card {
+      background: var(--light);
+      padding: 15px;
+      border-radius: 6px;
+    }
+    
+    .fragrance-card h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .step-by-step {
+      counter-reset: step;
+      margin: 25px 0;
+    }
+    
+    .step {
+      margin-bottom: 20px;
+      padding-left: 45px;
+      position: relative;
+    }
+    
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--secondary);
+      color: #fff;
+      border-radius: 50%;
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .combination-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .combination {
+      background: var(--light);
+      padding: 15px;
+      border-radius: 6px;
+      border-top: 3px solid var(--accent);
+    }
+    
+    .combination h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .promo-box {
+      background: #fff7e6;
+      border: 2px dashed var(--accent);
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .promo-box h2 {
+      color: var(--secondary);
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    
+    .promo-box p {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .promo-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    
+    .promo-box a:hover {
+      background: #b57a1f;
+    }
+
+    .disclaimer {
+      background: #fdf8f5;
+      border-left: 3px solid var(--accent);
+      padding: 12px 15px;
+      margin: 20px 0;
+      font-size: 0.85rem;
+      color: #555;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 5%;
+      background: var(--primary);
+      font-size: .9rem;
+      color: white;
+    }
+
+    /* Responsive images */
+    .img-fluid {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+      margin: 20px 0;
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 90% !important;
+      }
+      
+      h1 {
+        font-size: 2.4rem;
+      }
+      
+      .intro, .content {
+        padding: 30px 7%;
+      }
+      
+      .fragrance-types,
+      .combination-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: 850px !important;
+      }
+      
+      .fragrance-types,
+      .combination-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.9rem;
+      }
+      
+      h2 {
+        font-size: 1.4rem;
+      }
+      
+      .intro, .content {
+        padding: 20px 5%;
+      }
+      
+      .step {
+        padding-left: 40px;
+      }
+      
+      .combination-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fragrance Layering Guide</h1>
+      <p class="subtitle">How to Create Your Signature Scent</p>
+    </header>
+
+    <section class="intro">
+      <p>Your scent is your silent signature—an invisible accessory that completes your presence. While finding a perfect perfume is wonderful, creating a one-of-a-kind fragrance that's uniquely yours is truly special. Fragrance layering allows you to become your own perfumer, crafting a scent that tells your story and evolves with you throughout the day.</p>
+      <div class="author">
+        <img src="https://i.ibb.co/wFXzYtqk/AA8-Ys279-M7d8j6qf-Wl-C-y9c9-Lhgtu-NZOZtk1-KTD0l3s2-Uyndd-RGDt-B8-Mtjvs-ILz2-LGzj-QEN0g-OEey-Dt5l9r.jpg" alt="Fragrance Expert" class="author-img">
+        <div>
+          <div class="author-name">Sophia Reynolds</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <h2>Why Layer Fragrances?</h2>
+      <p>Fragrance layering isn't just a trend—it's an art form that allows for endless creativity and personalization. By combining different scents, you can create a fragrance that is uniquely yours, something that can't be found in any bottle. It's like creating your own personal signature that lingers in memory long after you've left the room.</p>
+
+      <img src="https://i.ibb.co/jPyBYZwN/Sprays-on-a-vanity.jpg" alt="Collection of perfumes and essential oils on a vanity" class="img-fluid">
+
+      <h2>Understanding Fragrance Notes</h2>
+      <p>To layer effectively, you need to understand fragrance composition. Most perfumes have three sets of notes that unfold over time:</p>
+      <div class="fragrance-types">
+        <div class="fragrance-card">
+          <h3>Top Notes</h3>
+          <p>The initial impression that lasts about 15-30 minutes. These are usually light, fresh scents like citrus, light fruits, or herbs.</p>
+        </div>
+        <div class="fragrance-card">
+          <h3>Middle Notes</h3>
+          <p>The heart of the fragrance that emerges after top notes fade. These often include floral, spicy, or green aromas.</p>
+        </div>
+        <div class="fragrance-card">
+          <h3>Base Notes</h3>
+          <p>The deep, rich scents that appear once the fragrance has dried down. These include woods, musk, vanilla, and amber.</p>
+        </div>
+      </div>
+      <div class="tip-box">
+        <strong>Pro Tip:</strong> When layering, consider how the base notes of different fragrances will interact, as these will last the longest on your skin.
+      </div>
+
+      <h2>How to Layer Fragrances: Step-by-Step</h2>
+      <div class="step-by-step">
+        <div class="step">
+          <h3>Start with a Scent-Free Base</h3>
+          <p>Begin with unscented moisturizer or petroleum jelly on your pulse points. This helps fragrances last longer and provides a neutral base for layering.</p>
+        </div>
+        <div class="step">
+          <h3>Apply Heaviest Fragrance First</h3>
+          <p>Start with the fragrance that has the strongest base notes (woods, musk, vanilla). Apply to pulse points—wrists, neck, behind ears, and knees.</p>
+        </div>
+        <div class="step">
+          <h3>Layer Complementary Scents</h3>
+          <p>Add your second fragrance, focusing on complementary middle notes. Spray on clothing or hair for longer-lasting but subtle effect.</p>
+        </div>
+        <div class="step">
+          <h3>Finish with Top Notes</h3>
+          <p>Use the lightest fragrance last, misting it into the air and walking through it for an even distribution of the top notes.</p>
+        </div>
+        <div class="step">
+          <h3>Wait and Evaluate</h3>
+          <p>Allow the fragrances to settle and interact with your skin chemistry for 10-15 minutes before assessing the result.</p>
+        </div>
+      </div>
+
+      <img src="https://i.ibb.co/G4yBWsq1/Step-by-step-visual-guide-showing-where-to-apply-fragrance-on-the-body.jpg" alt="Step-by-step visual guide showing where to apply fragrance on the body" class="img-fluid">
+
+      <h2>Successful Scent Combinations</h2>
+      <p>Some fragrance families naturally work well together. Here are some proven combinations to inspire you:</p>
+      <div class="combination-grid">
+        <div class="combination">
+          <h3>Floral + Woody</h3>
+          <p>A romantic floral paired with sandalwood or cedar creates a sophisticated, balanced scent perfect for evening wear.</p>
+        </div>
+        <div class="combination">
+          <h3>Citrus + Musk</h3>
+          <p>Bright, zesty notes combined with clean musk make for a fresh yet intimate daytime fragrance.</p>
+        </div>
+        <div class="combination">
+          <h3>Vanilla + Spice</h3>
+          <p>The sweetness of vanilla tempered with cardamom or cinnamon creates a warm, comforting scent ideal for cooler months.</p>
+        </div>
+        <div class="combination">
+          <h3>Aquatic + Green</h3>
+          <p>Fresh ocean notes layered with grass or herbal scents evoke a crisp, natural aroma perfect for daytime.</p>
+        </div>
+      </div>
+      <div class="tip-box">
+        <strong>Pro Tip:</strong> Keep a scent journal to note which combinations work well together and how they evolve on your skin throughout the day.
+      </div>
+
+      <h2>Create Your Signature Scent Journey</h2>
+      <p>Fragrance layering is a personal journey of discovery. Your perfect combination might evolve with your tastes, the seasons, or different phases of your life. Don't be afraid to experiment and step outside your comfort zone—you might discover an unexpected combination that becomes your signature scent.</p>
+      <p>The most important aspect of fragrance layering is that it brings you joy and confidence. Your signature scent should make you feel exactly like yourself—just a little more enhanced.</p>
+
+      <img src="https://i.ibb.co/2Y5QKk1Z/Person-confidently-wearing-their-signature-scent.jpg" alt="Person confidently wearing their signature scent" class="img-fluid">
+
+      <div class="promo-box">
+        <h2>✨ Get Free Bath & Body Works Samples ✨</h2>
+        <p>Discover your next favorite fragrance with complimentary Bath & Body Works samples. Perfect for trying before you buy and layering into your own unique scent journey.</p>
+        <a href="https://rebrand.ly/bbw-free-samples">Claim Your Free Samples</a>
+      </div>
+
+      <footer>
+        <p>Note: This is not the official Bath & Body Works website. This page provides links to Bath & Body Works samples through an affiliate program. Availability of free samples may vary and is subject to change without notice.</p>
+      </footer>
+    </section>
+  </div>
+</body>
+</html>
